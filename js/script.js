@@ -62,47 +62,33 @@ function generateDice() {
     return rand;
 }
 
-function resetAttackerArray() {
-    attackerDices[0] = 6;
-    attackerDices[1] = 6;
-    attackerDices[2] = 6;
-}
-
-function resetDefenderArray() {
-    defenderDices[0] = 6;
-    defenderDices[1] = 6;
-    defenderDices[2] = 6;
-}
-
 function displayDices() {
     let disabledAttacker = "./img/dice_attacker_disabled.svg";
     let disabledDefender = "./img/dice_defender_disabled.svg";
-    attackerDice1.src = "./img/dice_attacker_" + attackerDices[0] + ".svg";
-    if(attackerDice2Disabled) {
+
+    if(attackerCounter > 1)
+        attackerDice1.src = "./img/dice_attacker_" + attackerDices[0] + ".svg";
+    else attackerDice1.src = disabledAttacker;
+    if(attackerDice2Disabled)
         attackerDice2.src = disabledAttacker;
-    }
-    else {
+    else
         attackerDice2.src = "./img/dice_attacker_" + attackerDices[1] + ".svg";
-    }
-    if(attackerDice3Disabled) {
+    if(attackerDice3Disabled)
         attackerDice3.src = disabledAttacker;
-    }
-    else {
+    else
         attackerDice3.src = "./img/dice_attacker_" + attackerDices[2] + ".svg";
-    }
-    defenderDice1.src = "./img/dice_defender_" + defenderDices[0] + ".svg";
-    if(defenderDice2Disabled) {
+
+    if(defenderCounter > 0)
+        defenderDice1.src = "./img/dice_defender_" + defenderDices[0] + ".svg";
+    else defenderDice1.src = disabledDefender;
+    if(defenderDice2Disabled)
         defenderDice2.src = disabledDefender;
-    }
-    else {
+    else
         defenderDice2.src = "./img/dice_defender_" + defenderDices[1] + ".svg";
-    }
-    if(defenderDice3Disabled) {
+    if(defenderDice3Disabled)
         defenderDice3.src = disabledDefender;
-    }
-    else {
+    else
         defenderDice3.src = "./img/dice_defender_" + defenderDices[2] + ".svg";
-    }
 }
 
 function disableDices() {
@@ -130,9 +116,13 @@ function disableDices() {
 function generateAttackerDices() {
     attackerDices[0] = generateDice();
     attackerDice2Generated = !attackerDice2Disabled;
-    attackerDices[1] = generateDice();
+    if(attackerDice2Generated)
+        attackerDices[1] = generateDice();
+    else attackerDices[1] = 1;
     attackerDice3Generated = !attackerDice3Disabled;
-    attackerDices[2] = generateDice();
+    if(attackerDice3Generated)
+        attackerDices[2] = generateDice();
+    else attackerDices[2] = 1;
     attackerDices.sort();
     attackerDices.reverse();
 }
@@ -140,9 +130,13 @@ function generateAttackerDices() {
 function generateDefenderDices() {
     defenderDices[0] = generateDice();
     defenderDice2Generated = !defenderDice2Disabled;
-    defenderDices[1] = generateDice();
+    if(defenderDice2Generated)
+        defenderDices[1] = generateDice();
+    else defenderDices[1] = 1;
     defenderDice3Generated = !defenderDice3Disabled;
-    defenderDices[2] = generateDice();
+    if(defenderDice3Generated)
+        defenderDices[2] = generateDice();
+    else defenderDices[2] = 1;
     defenderDices.sort();
     defenderDices.reverse();
 }

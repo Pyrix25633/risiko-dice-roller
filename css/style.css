@@ -8,7 +8,7 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: darkslategray;
+    background-color: #adf7b6;
     margin: 0;
     padding: 0;
 }
@@ -80,7 +80,7 @@ body {
     width: 30vh;
     height: 30vh;
     padding: 1vh;
-    background-color: black;
+    background-color: #01c165;
     border-radius: 50%;
 }
 
