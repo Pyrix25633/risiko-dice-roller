@@ -30,6 +30,9 @@ let attackerDice3Generated = false;
 let defenderDice2Generated = false;
 let defenderDice3Generated = false;
 
+let showAttackerDice1 = false;
+let showDefenderDice1 = false;
+
 let start = document.getElementById("start");
 let startDisabled = false;
 let switchButton = document.getElementById("switch");
@@ -66,7 +69,7 @@ function displayDices() {
     let disabledAttacker = "./img/dice_attacker_disabled.svg";
     let disabledDefender = "./img/dice_defender_disabled.svg";
 
-    if(attackerCounter > 1)
+    if(attackerCounter > 1 || showAttackerDice1)
         attackerDice1.src = "./img/dice_attacker_" + attackerDices[0] + ".svg";
     else attackerDice1.src = disabledAttacker;
     if(attackerDice2Disabled)
@@ -78,7 +81,7 @@ function displayDices() {
     else
         attackerDice3.src = "./img/dice_attacker_" + attackerDices[2] + ".svg";
 
-    if(defenderCounter > 0)
+    if(defenderCounter > 0 || showDefenderDice1)
         defenderDice1.src = "./img/dice_defender_" + defenderDices[0] + ".svg";
     else defenderDice1.src = disabledDefender;
     if(defenderDice2Disabled)
@@ -89,6 +92,10 @@ function displayDices() {
         defenderDice3.src = disabledDefender;
     else
         defenderDice3.src = "./img/dice_defender_" + defenderDices[2] + ".svg";
+
+    if(attackerCounter > 1 && defenderCounter > 0 && !startDisabled)
+        start.src = "./img/risiko.svg";
+    else start.src = "./img/risiko_disabled.svg";
 }
 
 function disableDices() {
@@ -232,6 +239,8 @@ switchButton.addEventListener("click", () => {
     if(startDisabled) {
         startDisabled = false;
         start.src = "./img/risiko.svg"
+        showAttackerDice1 = false;
+        showDefenderDice1 = false;
         disableDices();
         resetInterval = setInterval(disableDices, 500);
     }
@@ -243,6 +252,8 @@ switchButton.addEventListener("click", () => {
         attackerDice3Disabled = !attackerDice3Generated;
         defenderDice2Disabled = !defenderDice2Generated;
         defenderDice3Disabled = !defenderDice3Generated;
+        showAttackerDice1 = true;
+        showDefenderDice1 = true;
         displayDices();
     }
 })
