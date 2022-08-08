@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Risiko Dice Roller</title>
+        <link rel="icon" href="./img/risiko.svg">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div id="main">
+            <div class="troops" id="attacker-troops">
+                <img id="add-attacker-1" class="icon" src="./img/tank_attacker.svg" alt="tank_attacker">
+                <img id="add-attacker-10" class="icon" src="./img/flag_attacker.svg" alt="flag_attacker">
+                <div class="counter">
+                    <span id="attacker-counter"></span>
+                </div>
+                <img id="delete-attacker" class="icon" src="./img/delete_attacker.svg" alt="delete_attacker">
+            </div>
+
+            <div id="dices-section">
+                <div class="dices">
+                    <img id="attacker-dice-1" class="icon" src="./img/dice_attacker_6.svg" alt="attacker_dice">
+                    <img id="attacker-dice-2" class="icon" src="./img/dice_attacker_6.svg" alt="attacker_dice">
+                    <img id="attacker-dice-3" class="icon" src="./img/dice_attacker_6.svg" alt="attacker_dice">
+                </div>
+
+                <div id="start-section">
+                    <img id="start" src="./img/risiko.svg" alt="risiko">
+                    <img id="switch" src="./img/switch.svg" alt="switch">
+                </div>
+
+                <div class="dices">
+                    <img id="defender-dice-1" class="icon" src="./img/dice_defender_6.svg" alt="defender_dice">
+                    <img id="defender-dice-2" class="icon" src="./img/dice_defender_6.svg" alt="defender_dice">
+                    <img id="defender-dice-3" class="icon" src="./img/dice_defender_6.svg" alt="defender_dice">
+                </div>
+            </div>
+
+            <div class="troops" id="defender-troops">
+                <img id="add-defender-1" class="icon" src="./img/tank_defender.svg" alt="tank_defender">
+                <img id="add-defender-10" class="icon" src="./img/flag_defender.svg" alt="flag_defender">
+                <div class="counter">
+                    <span id="defender-counter"></span>
+                </div>
+                <img id="delete-defender" class="icon" src="./img/delete_defender.svg" alt="delete_defender">
+            </div>
+        </div>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>

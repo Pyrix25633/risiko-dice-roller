@@ -1,0 +1,82 @@
+:root {
+    --color-attacker: #B90000;
+    --background-attacker: #E63737;
+    --color-defender: #003FB9;
+    --background-defender: #4A82EE;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: darkslategray;
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    border-radius: 50%;
+    width: 16vh;
+    height: 16vh;
+    margin: 1vh;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+.troops {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1vh;
+}
+
+.counter {
+    display: flex;
+    font-size: 15vh;
+    align-items: center;
+    margin: 1vh;
+}
+
+#attacker-counter {
+    color: var(--color-attacker);
+}
+
+#defender-counter {
+    color: var(--color-defender);
+}
+
+#dices-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dices {
+    display: flex;
+    flex-direction: column;
+    margin: 1vh;
+}
+
+#start-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#start {
+    width: 30vh;
+    height: 30vh;
+    padding: 1vh;
+    background-color: black;
+    border-radius: 50%;
+}
+
+#switch {
+    margin-top: 1vh;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+}
