@@ -80,3 +80,36 @@ body {
     height: 15vh;
     border-radius: 50%;
 }
+
+@media screen and (max-width: 1000px) {
+    .icon {
+        width: 16vw;
+        height: 16vw;
+        margin: 1vw;
+    }
+    
+    .troops {
+        margin: 1vw;
+    }
+    
+    .counter {
+        font-size: 15vw;
+        margin: 1vw;
+    }
+    
+    .dices {
+        margin: 1vw;
+    }
+    
+    #start {
+        width: 30vw;
+        height: 30vw;
+        padding: 1vw;
+    }
+    
+    #switch {
+        margin-top: 1vw;
+        width: 15vw;
+        height: 15vw;
+    }
+}
