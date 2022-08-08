@@ -34,17 +34,27 @@ body {
 
 .counter {
     display: flex;
+    font-family: 'Quicksand', sans-serif;
     font-size: 15vh;
+    line-height: 16vh;
     align-items: center;
     margin: 1vh;
 }
 
 #attacker-counter {
     color: var(--color-attacker);
+    background-color: var(--background-attacker);
+    width: 28vh;
+    border-radius: 3vh;
+    text-align: center;
 }
 
 #defender-counter {
     color: var(--color-defender);
+    background-color: var(--background-defender);
+    width: 28vh;
+    border-radius: 3vh;
+    text-align: center;
 }
 
 #dices-section {
@@ -94,7 +104,18 @@ body {
     
     .counter {
         font-size: 15vw;
+        line-height: 16vw;
         margin: 1vw;
+    }
+    
+    #attacker-counter {
+        width: 28vw;
+        border-radius: 3vw;
+    }
+    
+    #defender-counter {
+        width: 28vw;
+        border-radius: 3vw;
     }
     
     .dices {
