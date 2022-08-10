@@ -36,6 +36,7 @@ let showDefenderDice1 = false;
 let start = document.getElementById("start");
 let startDisabled = false;
 let switchButton = document.getElementById("switch");
+let centralDice = document.getElementById("dice");
 
 //Functions
 function modifyAttackerCounter() {
@@ -148,7 +149,25 @@ function generateDefenderDices() {
     defenderDices.reverse();
 }
 
-function startGeneration() {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function startGeneration() {
+    for(let i = 0; i < 7; i++) {
+        generateAttackerDices();
+        generateDefenderDices();
+        displayDices();
+        await sleep(150);
+    }
+    generateAttackerDices();
+    generateDefenderDices();
+    displayDices();
+    await sleep(300);
+    generateAttackerDices();
+    generateDefenderDices();
+    displayDices();
+    await sleep(350);
     generateAttackerDices();
     generateDefenderDices();
     displayDices();
@@ -164,6 +183,22 @@ function startGeneration() {
     }
     modifyAttackerCounter();
     modifyDefenderCounter();
+}
+
+function displayCentralDice(num) {
+    centralDice.src = "./img/dice_yellow_" + num + ".svg";
+}
+
+async function generateCentralDice() {
+    for(let i = 0; i < 7; i++) {
+        displayCentralDice(generateDice());
+        await sleep(150);
+    }
+    displayCentralDice(generateDice());
+    await sleep(300);
+    displayCentralDice(generateDice());
+    await sleep(350);
+    displayCentralDice(generateDice());
 }
 
 //Buttons
@@ -227,6 +262,8 @@ start.addEventListener("click", () => {
     if(attackerCounter > 1 && defenderCounter > 0 && !startDisabled)
         startGeneration()
 });
+
+centralDice.addEventListener("click", generateCentralDice);
 
 //Reset
 modifyAttackerCounter(0);

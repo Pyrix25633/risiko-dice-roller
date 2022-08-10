@@ -8,6 +8,8 @@
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
     background-color: #adf7b6;
     margin: 0;
     padding: 0;
@@ -84,11 +86,17 @@ body {
     border-radius: 50%;
 }
 
-#switch {
-    margin-top: 1vh;
-    width: 15vh;
-    height: 15vh;
+.button-bottom {
+    margin: 2vh 1vh 0 1vh;
+    width: 16vh;
+    height: 16vh;
     border-radius: 50%;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 @media screen and (max-width: 1000px) {
@@ -130,7 +138,7 @@ body {
     
     #switch {
         margin-top: 1vw;
-        width: 15vw;
-        height: 15vw;
+        width: 16vw;
+        height: 16vw;
     }
 }
