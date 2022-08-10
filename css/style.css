@@ -129,11 +129,18 @@ body {
     .dices {
         margin: 1vw;
     }
-    
+
     #start {
         width: 30vw;
         height: 30vw;
         padding: 1vw;
+    }
+    
+    .button-bottom {
+        margin: 2vw 1vw 0 1vw;
+        width: 16vw;
+        height: 16vw;
+        border-radius: 50%;
     }
     
     #switch {
